@@ -31,7 +31,6 @@ function seend(){
   //borrar campos del formulario
   formulary.reset()
   modal.close();
-  console.log("1")
 })
 }
 // abrir y cerrar modal2
@@ -39,3 +38,24 @@ formulary.addEventListener("submit", ()=>{
   setTimeout(function openModal2(){modal2.showModal()}, 500)
   setTimeout(function closeModal2(){modal2.close()}, 4000)
 })
+
+
+
+// light- dark mode
+const lightModeBtn = document.getElementById("light-mode-btn");
+const darkModeBtn = document.getElementById("dark-mode-btn");
+
+lightModeBtn.addEventListener("click", setDarkMode);
+darkModeBtn.addEventListener("click", setLightMode);
+
+function setDarkMode() {
+  setUserTheme("dark");
+}
+
+function setLightMode() {
+  setUserTheme("light");
+}
+
+function setUserTheme(newTheme){
+  document.documentElement.setAttribute("data-theme", newTheme);
+}

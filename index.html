@@ -1,66 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The best Soul food</title>
+    <link rel="website icon" type="png" href="/imagenes/img1.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fontello.css">
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="modal.css">
+    <script src="https://kit.fontawesome.com/9648da387d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
-        <ul class="icon">
-            <a href="https://www.facebook.com/yamile.acunag" class="btn-fb" target="_blank">
-                <i class="icon-facebook-rect"></i>
+        <button id="dark-mode-btn" class="dark-mode-btn" type="button" title="Change to light mode" >
+            <i class="fa-regular fa-sun" ></i>
+        </button>
+        <button id="light-mode-btn" class="light-mode-btn" type="button" title="Change to dark mode">
+            <i class="fa-solid fa-moon "></i>
+        </button>
+
+        <div class="icon">
+            <a href="https://www.instagram.com/yamiileag/" target="_blank" title="Instagram">
+                <i class="fa-brands fa-square-instagram"></i>
             </a>
-            
-            <a href="https://www.instagram.com/yamiileag/" class="btn-ig" target="_blank">
-                <i class="icon-instagram"></i>
+            <a href="https://api.whatsapp.com/send?phone=573216146015" target="_blank" title="Whatsapp">
+                <i class="fa-brands fa-square-whatsapp"></i>
             </a>
-            <a href="https://api.whatsapp.com/send?phone=573216146015" class="btn-wsp" target="_blank">
-                <i class="icon-whatsapp"></i>
+            <a href="https://www.facebook.com/yamile.acunag" target="_blank" title="Facebook">
+                <i class="fa-brands fa-square-facebook"></i>
             </a>
-        </ul>
+        </div>
             
         <section class="hero">
             <div class="info"> 
                 <h1>The best <br> Soul food</h1>
                 <p> Let yourself be captivated by the exquisite and most sophisticated flavors of our cuisine.</p>
-                <button id="open-modal" class="info-button" > Book a table</button>
+                <button id="open-modal" class="info-button" type="button" > Book a table</button>
             </div>
             <img class="brocheta-image" src="./imagenes/brochetas.jpg" alt="brocheta">
-
         </section>
         
         <dialog id="modal" class="modal" >
-            <button id="close-modal" class="close-modal" >⨉</button>
-            <div class="modal">
-                
+            <button id="close-modal" class="close-modal" type="button" title="Close">⨉</button>
+            <div class="modal">     
                 <fieldset>
                     <legend class="title-modal">Book a Table </legend>
                     <form id="form" class="form" action="">
-                        <label for="name">Name:</label>
-                        <input type="name" name="name" required>
+                        <label for="name" >Name:</label>
+                        <input type="name" name="name"  required >
                         
                         <label for="id">ID number:</label>
-                        <input type="id" name="id" pattern="^[0-9]+" required >
+                        <input type="id" name="id" pattern="^[0-9]+" title="This field required numbers only" required >
 
                         <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" pattern="^.+@[^\.].*\.[a-z]{2,}$" required >
+                        <input type="email" name="email" pattern="^.+@[^\.].*\.[a-z]{2,}$" title="Example: email@email.com" required >
 
                         <label for="tel">Phone:</label>
-                        <input type="tel" name="tel" id="tel" maxlength="10"  pattern="^[0-9]+" required>
+                        <input type="tel" name="tel"  maxlength="10"  pattern="^[0-9]+" title="This field required numbers only" required>
 
                         <label for="date">Date:</label>
-                        <input id="date" type="date" name="date" id="date" min="15-02-23" required>
+                        <input id="date" type="date" name="date" required>
                         
                         <label for="time">Time:</label>
-                        <input type="time" name="time" id="time" required>
+                        <input type="time" name="time" required>
 
                         <label for="number">Number of people:</label>
-                        <input type="number" name="numberPeople" id=""required >
+                        <input type="number" name="numberPeople" required >
 
                         <button id="send" class="send" type="submit" onclick="seend()"> Submit </button>
                     </form>
@@ -70,21 +75,21 @@
 
         <dialog id="modal2" class="modal2" >
             <div class="modall2">
-                <h1>  ✔ </h1>
+                <h1> ✔ </h1>
                 <h2> Successful booking </h2>
                 <h3> Thank you for choosing us </h3>
-                <img src="/imagenes/logo...png" alt="logo">
+                <img src="/imagenes/logo.png"  alt="logo">
             </div>
         </dialog>
 
         <section class="services">
             <h2 class="services-title"> Our Specialitys </h2>
             <div class="services-grid">
-                <img id="img" class="services-item services-item-big" src="./imagenes/hamb.jpg" alt="hamburguesa">
-                <img id="img" class="services-item" src="./imagenes/alitas.png" alt="alitas">
-                <img id="img" class="services-item" src="./imagenes/platano.png" alt="platano">
-                <img id="img" class="services-item" src="./imagenes/lasaña.jpg" alt="lasaña">
-                <img id="img" class="services-item" src="./imagenes/perro.jpg" alt="perro">
+                <img class="services-item services-item-big" src="./imagenes/hamb.jpg" alt="hamburguesa">
+                <img class="services-item" src="./imagenes/alitas.png" alt="alitas">
+                <img class="services-item" src="./imagenes/platano.png" alt="platano">
+                <img class="services-item" src="./imagenes/lasaña.jpg" alt="lasaña">
+                <img class="services-item" src="./imagenes/perro.jpg" alt="perro">
             </div>
         </section> 
 
@@ -103,7 +108,7 @@
         </section>
         <footer>
             <div class="footer-div">
-                <img class="logo" src="./imagenes/logo...png" alt="logo">
+                <img class="logo" src="./imagenes/logo.png" alt="logo">
             </div>
         </footer>  
     </main>

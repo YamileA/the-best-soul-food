@@ -1,13 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lilita+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 
-* {
+:root{
+    --theme-color: white;
+    --text-color: black;
+    --color-input:rgba(34, 35, 35, 0.437);
+    --box-shadow: 0 10px 6px -11px rgb(0 0 0 / 75%);
+    --box-shadow-img:1px 1px 14px 4px rgb(0 0 0 / 25%);
+   
+    color-scheme: light;
+
+}
+/*@media (prefers-color-scheme: dark) { */
+:root[data-theme="dark"]  {
+    --theme-color: rgb(16, 15, 15);
+    --text-color: rgb(238, 234, 234);
+    --color-input: rgba(180, 182, 181, 0.663);
+    --box-shadow: 0 10px 6px -11px rgb(255 255 255 / 47%);
+    --secundary-color: rgba(39, 38, 38, 0.836); 
+    /*--box-shadow-img: inset 2px 2px 20px 7px rgb(0 0 0 / 65%);*/
+    --box-shadow-img: inset 0px 0px 18px 0px rgba(0,0,0,0.9);
+
+    color-scheme: dark;
+}
+:root[data-theme="light"] .dark-mode-btn{
+    display: none;
+}
+:root[data-theme="dark"] .light-mode-btn{
+    display: none;
+}
+
+html {
+    background-color: var(--theme-color);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 main {
     max-width: 1000px;
     margin: auto;
+}
+
+.light-mode-btn,
+.dark-mode-btn{
+    display: flex;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 .icon {
@@ -23,23 +68,24 @@ main {
     gap: 0.1rem;
 }
 
-.icon-whatsapp{
-    color: rgb(251, 251, 251);
-    background-color:rgb(41, 208, 113);
-    border-radius: 50px;
+a {
+    height: 35px;
 }
 
-.icon-facebook-rect{
+.fa-square-whatsapp{
+    color: rgb(41, 208, 113);
+}
+
+.fa-square-facebook{
     color: blue;
-    background-color: #ffffff;
-    border-radius: 10px;
 }
 
-.icon-instagram{
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-    background-image: linear-gradient(to right top, 
-    #dad911, #ffa500, #ff5b4b, #ff0098, #eb12eb);
+.fa-square-instagram{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    /* Also define standard property for compatibility */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero {
@@ -49,7 +95,7 @@ main {
     grid-auto-rows: 400px;
     place-items: center;
     min-width: 320px;
-    box-shadow: 0 10px 6px -11px rgb(0 0 0 / 75%)
+    box-shadow: var(--box-shadow)
 }   
 
 .brocheta-image {
@@ -60,7 +106,7 @@ main {
 }
 
 .info {
-    
+    color: var(--text-color);
     align-self: center;
     padding: 0 35px;
     font-weight: bolder;
@@ -79,20 +125,20 @@ h1 {
     font-weight: bolder;
     cursor: pointer;
     margin: 20px;
-    position: relative
+    position: relative;
+    color: black;
 }
 
 .info-button:hover{
-    background-color: hsl(146, 51%, 46%);
+    background-color: rgb(57, 177, 109);
 }
 
 .services {
     margin: 50px 0;
-    
 }
 
 .services-title{
-    color: black;
+    color:var(--text-color);
     text-align: center;
     margin-bottom: 50px;
     font-size: 2rem;
@@ -118,7 +164,7 @@ h1 {
     grid-area: 1 / 1 / 3 / 3;
 }
 
-#img {
+.services-grid img {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -128,6 +174,7 @@ h1 {
 }
 
 .menu-title{
+    color: var(--text-color);
     font-size: 2rem;
     font-weight: bolder;
     text-align: center;
@@ -167,6 +214,13 @@ h1 {
 .logo {
     height: 100%;
     width: 200px;
+
+    background-color: white;
+    box-shadow: var(--box-shadow-img);
+    -webkit-border-radius: 131px 17px 131px 17px;
+    -moz-border-radius: 131px 17px 131px 17px; 
+    border-radius: 131px 17px 131px 17px;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -175,6 +229,7 @@ h1 {
       justify-content: center;
       grid-template-rows: minmax(200px, 300px);
       margin: 0;
+      padding: 10px;
     }
 
     .info{
@@ -210,210 +265,3 @@ h1 {
     }
 }
 
-
-/* MODAL - reservaciones*/
-.close-modal{
-    padding: 0 3px;
-    position: absolute;
-    background-color: #ffffff;
-    border: none;
-    font-weight: 500;
-    top: 1%;
-    right: 1%;
-    cursor: pointer;
-  }
-
-dialog::backdrop{
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-}
-
-.modal{
-    width: 330px;
-    height: 450px;
-    /*position: fixed;*/
-    background-color: #ffffff;
-    color: #000000;
-    border-radius: 3%;
-}
-
-.title-modal{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #000000;
-    font-weight: 800;
-    font-size: large;
-    padding: 4%;
-}
-
-fieldset {
-    border-style: dotted;
-    padding: 12px;
-    margin: 0;
-    border-radius: 3%;
-}
-
-.form{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.form label {
-    display: flex;
-    margin-top: 2px;
-    margin-left: 2px;
-    font-size: 14px;
-}
-
-.form input{
-    width: 95%;
-    padding: 5px;
-    border-style: double;
-    border-color: #6d6c6c16;
-    border-radius: 6px;
-    color: #1d1c1c;
-    font-size: 12px;   
-    background-color: rgba(231, 247, 241, 0.559);
-}
-
-form input:hover{
-    /*border-style: ridge;*/
-    border-color: rgba(38, 37, 37, 0.301);
-}
-
-.send{
-    display: flex;
-    width: 100%;
-    height: 35px;
-    border-style: groove;
-    border-color: #000000;
-    background-color: #00d26a;
-    color: #ffffff;
-    font-size: 15px;
-    border-radius: 10px;
-    padding: 2%;
-    margin-top: 15px;
-    font-weight: 800;
-    justify-content:center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.send:hover{
-    /*background-color: rgb(66, 207, 160);*/
-    background-color: hsl(146, 51%, 46%);;
-    border-top-color: #000000;
-    border-style: groove;
-}
-
-.modal2{
-    width: 280px;
-    border-radius: 3%;
-}
-
-.modall2{
-    display: flex;
-    justify-content: center;
-    flex-direction: column; 
-    align-items: center;
-    border-radius: 3%;
-}
-
-.modal2 h1 {
-    display: flex;
-    width: 80px;
-    height: 80px;
-    background-color: #00d26a;
-    border-radius: 50%;
-    color: white;
-    margin: 15px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: -1px -1px 10px 0px rgb(0 210 106 / 80%);
-}
-
-.modal2 h2{
-    margin: 5px;
-    font-size: 30px;
-    font-family: 'Lilita One', cursive;
-}
-
-.modal2 h3{
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-family: 'Caveat', cursive;
-    box-shadow: 0 10px 6px -11px rgb(0 0 0 / 75%)
-}
-
-.modal2 img{
-    height: 100%;
-    width: 150px;
-}
-
-
-/*modal*/
-@media screen and (max-width: 550px){
-    .modal{
-        max-width: 250px;
-        min-width: 150px;
-        height: 310px;
-        width: 200px;
-    }
-    fieldset{
-        padding: 0 8px 8px 8px;
-        width: 180px;
-    }
-
-    .title-modal{
-        padding: 2%;
-        font-size: medium;
-    }
-
-    .form{
-        width: 100%;
-    }
-
-    .form label{
-        margin-top: 1%;
-        font-size: 10px;
-    }
-
-    .form input{ 
-        padding: 2px;
-        height: 13px;
-        font-size: 10px;
-    }
-
-    .send{
-        width: 100%;
-        position: relative;
-        font-weight: 600;
-        height: 30px;
-        font-size: 13px;
-    }    
-
-    .modal2{
-        width: 200px;
-    }
-
-    .modal2 h1{
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    font-size: 20px;
-    }
-
-    .modal2 h2{
-        font-size: 20px;
-    }
-
-    .modal2 h3{
-        font-size: 16px;
-    }
-    .modal2 img {
-        width: 120px;
-        margin: 0;
-    }
-}
