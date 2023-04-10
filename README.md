@@ -1,7 +1,7 @@
 # The best soul food
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/108593446/221275744-d0c04bd8-cfdb-4c01-a585-4efc4997200b.png">
-</p>
+   <img src="https://user-images.githubusercontent.com/108593446/231008377-3e638ca8-f62e-4292-9a95-b4d6987f55dc.png">
+   
 <h4 align="center">
 :construction: Project under construction :construction:
 </h4>
