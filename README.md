@@ -10,9 +10,10 @@
 The best way to learn is to practice, so get started with this delicious fast food website using HTML, CSS and JS.
 
 ## :arrow_forward: Demo
-https://user-images.githubusercontent.com/108593446/221300089-11da4d84-8c6f-457e-829d-860311978473.mp4
+
 
 ## :mag_right: Features
 <ul> 
+        <li> </li>
         <li> </li>
 </ul>
