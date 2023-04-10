@@ -80,6 +80,10 @@ a {
     color: blue;
 }
 
+.fa-square-github{
+    color: var(--text-color);
+}
+
 .fa-square-instagram{
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     -webkit-background-clip: text;
@@ -201,6 +205,10 @@ h1 {
 
 .menu-grid-item img:hover{
     transform: scale(1.20);
+}
+
+.footer{
+    height: 90px;
 }
 
 .footer-div{
